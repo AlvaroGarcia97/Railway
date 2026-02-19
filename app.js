@@ -45,7 +45,7 @@ app.use(express.static('public'));
   try {
     await createPool();
     await ensureDB();
-    app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));
+    app.listen(PORT, '0.0.0.0', () => console.log(`Servidor en puerto ${PORT}`));
   } catch (err) {
     console.error('Error al conectar con MySQL:', err);
     process.exit(1);
